@@ -31,14 +31,14 @@ export const WrapColorInputs = styled.div`
 
 export const Input = styled.input`
   width: 80px;
-  height: 51px;
+  height: 50px;
 
   opacity: 0.5;
 `
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 30px;
+  margin: 40px;
 `
 export const Label = styled.p`
   color: #fff;
