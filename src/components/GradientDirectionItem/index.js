@@ -2,7 +2,7 @@
 import {ButtonList, Button} from './styledComponents'
 
 const GradientDirectionItem = props => {
-  const {details, onClickDirection} = props
+  const {details, onClickDirection, isActive} = props
   const {directionId, value, displayText} = details
 
   const onClickButton = () => {
@@ -11,7 +11,7 @@ const GradientDirectionItem = props => {
 
   return (
     <ButtonList>
-      <Button type="button" onClick={onClickButton}>
+      <Button type="button" onClick={onClickButton} isActive={isActive}>
         {displayText}
       </Button>
     </ButtonList>

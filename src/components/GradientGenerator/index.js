@@ -40,18 +40,20 @@ class GradientGenerator extends Component {
     })
   }
 
-  colorDirectionTo = () => {
+  colorDirectionTo = id => {
     this.setState({
-      colorDirectionTo: gradientDirectionsList.id,
+      colorDirectionTo: id,
     })
   }
+
+  onGenerateBackgroundColor = () => {}
 
   render() {
     const {firstInputColor, secondInputColor, colorDirectionTo} = this.state
     return (
       <Container
         bgImage={`linear-gradient(to ${
-          (colorDirectionTo, firstInputColor, secondInputColor)
+          (colorDirectionTo.value, firstInputColor, secondInputColor)
         })`}
       >
         <Heading>Generate a CSS Color Gradient</Heading>
@@ -62,6 +64,7 @@ class GradientGenerator extends Component {
               key={each.directionId}
               details={each}
               onClickDirection={this.colorDirectionTo}
+              isActive={colorDirectionTo === each.directionId}
             />
           ))}
         </UnorderedList>
@@ -86,7 +89,9 @@ class GradientGenerator extends Component {
             />
           </InputContainer>
         </WrapColorInputs>
-        <Button type="button">Generate</Button>
+        <Button type="button" onClick={this.onGenerateBackgroundColor}>
+          Generate
+        </Button>
       </Container>
     )
   }
