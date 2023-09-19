@@ -31,7 +31,7 @@ export const WrapColorInputs = styled.div`
 
 export const Input = styled.input`
   width: 80px;
-  height: 50px;
+  height: 51px;
 
   opacity: 0.5;
 `
