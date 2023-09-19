@@ -9,6 +9,7 @@ import {
   Input,
   InputContainer,
   Label,
+  Button,
 } from './styledComponents'
 import GradientDirectionItem from '../GradientDirectionItem'
 
@@ -24,6 +25,7 @@ class GradientGenerator extends Component {
   state = {
     firstInputColor: '#8ae323',
     secondInputColor: '#014f7b',
+    colorDirectionTo: gradientDirectionsList[0].directionId,
   }
 
   onChangeFirstInputColor = event => {
@@ -38,15 +40,29 @@ class GradientGenerator extends Component {
     })
   }
 
+  colorDirectionTo = () => {
+    this.setState({
+      colorDirectionTo: gradientDirectionsList.id,
+    })
+  }
+
   render() {
-    const {firstInputColor, secondInputColor} = this.state
+    const {firstInputColor, secondInputColor, colorDirectionTo} = this.state
     return (
-      <Container>
+      <Container
+        bgImage={`linear-gradient(to ${
+          (colorDirectionTo, firstInputColor, secondInputColor)
+        })`}
+      >
         <Heading>Generate a CSS Color Gradient</Heading>
         <Para>Choose Direction</Para>
         <UnorderedList>
           {gradientDirectionsList.map(each => (
-            <GradientDirectionItem key={each.directionId} details={each} />
+            <GradientDirectionItem
+              key={each.directionId}
+              details={each}
+              onClickDirection={this.colorDirectionTo}
+            />
           ))}
         </UnorderedList>
         <Para>Pick the Colors</Para>
@@ -70,6 +86,7 @@ class GradientGenerator extends Component {
             />
           </InputContainer>
         </WrapColorInputs>
+        <Button type="button">Generate</Button>
       </Container>
     )
   }

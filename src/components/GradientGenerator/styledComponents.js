@@ -7,7 +7,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   font-family: 'roboto';
-  background-color: #000;
+  background-image=${props => props.bgImage};
   height: 100vh;
 `
 
@@ -42,4 +42,13 @@ export const InputContainer = styled.div`
 `
 export const Label = styled.p`
   color: #fff;
+`
+export const Button = styled.button`
+  color: #1e293b;
+  background-color: #00c9b7;
+  border-radius: 8px;
+  width: 100px;
+  height: 40px;
+  border: none;
+  font-weight: 700;
 `
