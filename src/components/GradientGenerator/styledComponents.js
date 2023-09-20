@@ -1,13 +1,13 @@
 // Style your elements here
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: 'roboto';
-  background-image=${props => props.bgImage};
+  background-image: ${props => props.bgImage};
   height: 100vh;
 `
 
@@ -32,8 +32,7 @@ export const WrapColorInputs = styled.div`
 export const Input = styled.input`
   width: 80px;
   height: 50px;
-
-  opacity: 0.5;
+  border: none;
 `
 export const InputContainer = styled.div`
   display: flex;

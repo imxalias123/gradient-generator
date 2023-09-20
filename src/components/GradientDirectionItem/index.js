@@ -6,7 +6,7 @@ const GradientDirectionItem = props => {
   const {directionId, value, displayText} = details
 
   const onClickButton = () => {
-    onClickDirection(directionId)
+    onClickDirection(value)
   }
 
   return (
